@@ -1,0 +1,17 @@
+#log{
+	margin-top: 1%;
+}
+h3{
+	background: purple;
+	color: #fff;
+	padding: 10px;
+}
+ul, ol{
+	line-height: 2em;
+}
+.type{
+	background-color: chartreuse;
+}
+.change{
+	background-color: antiquewhite;
+}
