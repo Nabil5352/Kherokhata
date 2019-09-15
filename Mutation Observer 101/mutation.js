@@ -27,13 +27,16 @@ function observeChange(){
 			* target: Return the target node where mutation happens [Node, default: null]
 			* type: Return the type of mutatation (ex. 'attributes', 'childList') [String]
 	    	*/
-
+	    	
 	    	switch(mutation.type){
 	    		case "attributes":
-	    			addLog("<li class='log'><span class='type'>"+ mutation.type +"</span>List <span class='change'>"+ mutation.target.dataset.id + "</span> Attribute <span class='change'>" + mutation.attributeName + "</span> changed to <span class='change'>" + mutation.target[mutation.attributeName] + "</span> (was <span class='change'>" + mutation.oldValue + "</span>) </li>");
+	    			addLog("<li class='log'><span class='type'>"+ mutation.type +"</span> List <span class='change'>"+ mutation.target.dataset.id + "</span> Attribute <span class='change'>" + mutation.attributeName + "</span> changed to <span class='change'>" + mutation.target[mutation.attributeName] + "</span> (was <span class='change'>" + mutation.oldValue + "</span>) </li>");
 	    			break;
 	    		case "childList":
 	    			addLog("<li class='log'><span class='type'>"+ mutation.type +"</span> List <span class='change'>"+ mutation.target.dataset.id + "</span> changed</li>");
+	    			break;
+	    		case "characterData":
+	    			addLog("<li class='log'><span class='type'>"+ mutation.type +"</span> Old value <span class='change'>"+ mutation.oldValue + "</span> changed to <span class='change'>"+ mutation.target.data + "</span> </li>");
 	    			break;
 	    		default:
 	    			break;
